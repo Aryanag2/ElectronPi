@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IoT Car Control System</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-car-side"></i> IoT Car Control System</h1>
+      <p class="subtitle">CS 437 Lab 2: IoT Networking</p>
+    </header>
+    
+    <div class="dashboard">
+      <div class="car-panel">
+        <div class="car-image-container">
+          <img src="car-icon.png" alt="IoT Car" id="car-image">
+          <div class="sensor-beam" id="sensor-beam"></div>
+        </div>
+        
+        <div class="control-panel">
+          <div class="control-grid">
+            <button id="forwardBtn" class="control-btn forward">
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <div class="control-row">
+              <button id="leftBtn" class="control-btn left">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button id="stopBtn" class="control-btn stop">
+                <i class="fas fa-stop"></i>
+              </button>
+              <button id="rightBtn" class="control-btn right">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <button id="backwardBtn" class="control-btn backward">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-panel">
+        <h2>Sensor Data</h2>
+        <div class="sensor-card battery">
+          <div class="sensor-icon">
+            <i class="fas fa-battery-half"></i>
+          </div>
+          <div class="sensor-details">
+            <h3>Battery</h3>
+            <div class="sensor-value" id="battery">--V</div>
+            <div class="battery-meter">
+              <div class="battery-level" id="battery-level"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="sensor-card temperature">
+          <div class="sensor-icon">
+            <i class="fas fa-temperature-half"></i>
+          </div>
+          <div class="sensor-details">
+            <h3>CPU Temperature</h3>
+            <div class="sensor-value" id="temperature">--°C</div>
+          </div>
+        </div>
+        
+        <div class="sensor-card distance">
+          <div class="sensor-icon">
+            <i class="fas fa-ruler"></i>
+          </div>
+          <div class="sensor-details">
+            <h3>Obstacle Distance</h3>
+            <div class="sensor-value" id="distance">-- cm</div>
+          </div>
+        </div>
+        
+        <div class="connection-panel">
+          <div class="connection-info">
+            <div class="connection-label">Status:</div>
+            <div class="connection-value" id="connection-status">Disconnected</div>
+          </div>
+          <div class="connection-form">
+            <input type="text" id="ip-address" placeholder="Raspberry Pi IP Address" value="172.20.10.8">
+            <input type="number" id="port-number" placeholder="Port" value="65432">
+            <button id="connect-btn">Connect</button>
+            <button id="disconnect-btn" disabled>Disconnect</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="status-message"></div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>

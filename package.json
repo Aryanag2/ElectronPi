@@ -1,0 +1,21 @@
+{
+  "name": "iot-web-app",
+  "version": "1.0.0",
+  "description": "Electron frontend for IoT car networking lab",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "iot",
+    "webapp",
+    "networking"
+  ],
+  "author": "Aryan Gosaliya",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "electron": "^34.3.0"
+  }
+}
